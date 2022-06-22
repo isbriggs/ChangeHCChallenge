@@ -4,6 +4,8 @@ import Hierarchy
 from Employee import Employee
 from Manager import Manager
 
+# Super Extra Credit: Unit Testing
+
 class Test(TestCase):
 
     def test_read_input(self):

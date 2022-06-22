@@ -2,6 +2,7 @@ from unittest import TestCase
 from Employee import Employee
 from Manager import Manager
 
+# Super Extra Credit: Unit Testing
 
 class TestManager(TestCase):
     def test_output(self):

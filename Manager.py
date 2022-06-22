@@ -9,7 +9,9 @@ class Manager(Employee):
             e_list = []
         self.employee_list = e_list
 
+    # Benefits 'Extra Credit' sorting feature, as well as 'Mega Extra Credit' unit testing.
     def __eq__(self, other):
+        # if all fields are equal, these are the same, else they are not
         if (self.e_id == other.e_id and
                 self.name == other.name and
                 self.manager == other.manager and
@@ -19,12 +21,16 @@ class Manager(Employee):
         else:
             return False
 
+    # Supports tree-like output
     def output(self, depth=0):
         output = ''
+        # pad all lines with the same number of tabs, relative to how many supervisors you have
         padding = '\t' * depth
         output += padding + str(self) + "\n"
         output += padding + "Employees of: " + str(self) + "\n"
+        # Extra Credit: sort employees alphabetically
         for e in sorted(self.employee_list):
+            # call output of member employees at increased depth for tree-like readability
             output += e.output(depth + 1)
         return output
 
